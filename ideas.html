@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Projects - CAPSTONNE</title>
+    
+    <title>capstonne</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            font-style: normal;
+            background-color: #f8f9fa; /* Light background color */
+            margin: 0;
+            padding: 0;
+            
+            background-image: url('images/back.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        h3 {
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+        }
+        .navbar {
+            background-color: #ffffff; /* White background */
+            padding: 20px 10px; /* Padding top and bottom, adjust as needed */
+        }
+        .navbar-brand {
+            font-size: 2rem; /* Larger font size for brand */
+            font-weight: bold;
+            color: #007bff; /* Brand color */
+        }
+        .navbar-toggler {
+            border-color: #007bff; /* Toggle button color */
+        }
+        .navbar-nav .nav-item .nav-link {
+            font-size: 1.2rem; /* Font size for nav links */
+            color: #333; /* Link color */
+            padding: 0.5rem 1rem; /* Padding for links */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+        .navbar-nav .nav-item .nav-link:hover,
+        .navbar-nav .nav-item .nav-link.active {
+            color: #007bff; /* Hover and active link color */
+            text-decoration: underline;
+        }
+        
+        .navbar-expand-lg .container {
+            padding-left: 15px;
+        }
+        
+        @media (max-width: 991.98px) {
+            .navbar {
+                padding: 20px; /* Padding top and bottom, adjust as needed */
+            }
+            .navbar-brand {
+                font-size: 1.7rem; /* Larger font size for brand */
+            }
+            .navbar-expand-lg .container {
+                padding-left: 15px;
+            }
+            
+            body {
+                background-image: url('images/back-mobile.jpg');
+            }
+            
+            .hero-section {
+                height: 100vh;
+            }
+        }
+        /* Footer styling */
+        .footer {
+            background-color: #333; /* Dark background color */
+            color: #fff; /* Text color */
+            padding: 60px 0; /* Padding top and bottom */
+        }
+        
+        .footer-section {
+            margin-bottom: 30px; /* Space between footer sections */
+        }
+        
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            color: #fff; /* Social icon color */
+            margin-right: 10px; /* Space between social icons */
+            font-size: 1.5rem;
+        }
+        
+        .social-icons a:hover {
+            color: #007bff; /* Hover color for social icons */
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .btn-primary {
+            background-color: #007bff; /* Button background color */
+            border-color: #007bff; /* Button border color */
+            padding: 10px 20px; /* Padding inside the button */
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3; /* Hover background color */
+            border-color: #0056b3; /* Hover border color */
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .footer-brand {
+                font-size: 1.2rem; /* Decrease font size for smaller screens */
+            }
+            .social-icons {
+                text-align: center; /* Center align social icons on smaller screens */
+            }
+            
+            
+            body {
+                 overflow-x: hidden; /* Prevent horizontal scrolling */
+            }
+        }
+        
+        /* Style for the Go to Top button */
+        #goTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 20px; /* Place the button 20px from the right */
+            z-index: 99; /* Ensure it is above other elements */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: #007bff; /* Blue background */
+            color: white; /* White text */
+            cursor: pointer; /* Add a pointer on hover */
+            padding: 10px; /* Some padding */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        #goTopBtn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        
+        .ideas-container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 30px;
+        }
+        
+        .table-container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .ad-container {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .ad-container ins {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="https://capstonne.in/home" data-aos="fade">capstonne</a>
+            
+            <button class="navbar-toggler" id="myButton" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+        </div>
+    </nav>
+    
+    <main>
+        
+        <section class="ideas-container">
+            <h5>If you have innovative project ideas and want to turn them into working, contact us at <a href="mailto:capstonne.development@gmail.com">capstonne.development@gmail.com</a>. Let's bring your ideas to life!</h5>
+        </section>
+
+        <section class="ideas-container">
+        <h3>AI and Emerging Tech Project Ideas</h3>
+        <table>
+            <tr>
+                <th>Project Idea</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>AI Yoga Guide</td>
+                <td>Develop an Android application that uses machine learning and pose estimation to guide and correct users' yoga postures in real-time.</td>
+            </tr>
+            <tr>
+                <td>Water Quality Prediction</td>
+                <td>Create an Android app that predicts the quality of water using machine learning models trained on sensor data like pH, turbidity, and temperature.</td>
+            </tr>
+            <tr>
+                <td>Digital Voting System</td>
+                <td>Design a secure and transparent Android-based voting application using blockchain technology to ensure integrity and immutability of votes.</td>
+            </tr>
+            <tr>
+                <td>Class Connect Vision</td>
+                <td>Build an Android app that facilitates peer-to-peer network connections for sharing class resources, videos, and real-time collaboration without internet dependency.</td>
+            </tr>
+            <tr>
+                <td>Mental IQ Detection</td>
+                <td>Develop a mobile application that assesses and predicts mental IQ levels based on interactive tasks and responses using machine learning algorithms.</td>
+            </tr>
+        </table>
+    </section>
+
+            <section class="ideas-container">
+            <h3>Graduation-Level AI and Tech Project Ideas</h3>
+            <table>
+                <tr>
+                    <th>Project Idea</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Onscreen Activity Tracking</td>
+                    <td>Build a Python-based desktop app that uses machine learning to analyze and report screen usage patterns for productivity and digital wellness.</td>
+                </tr>
+                <tr>
+                    <td>AI Fitness Coach</td>
+                    <td>Develop an Android app that uses the phone camera and pose estimation to provide fitness guidance and real-time feedback using ML models.</td>
+                </tr>
+                <tr>
+                    <td>AI Career Counselor</td>
+                    <td>Create a machine learning-based app that analyzes student interests and academic history to suggest career paths and relevant courses.</td>
+                </tr>
+                <tr>
+                    <td>Smart Attendance System</td>
+                    <td>Develop a facial recognition-based attendance system integrated with a mobile app and cloud database for real-time attendance tracking.</td>
+                </tr>
+                <tr>
+                    <td>AI-Powered Waste Classifier</td>
+                    <td>Create a mobile or web app that uses image classification to identify and sort types of waste (e.g., recyclable, organic) from captured images.</td>
+                </tr>
+                <tr>
+                    <td>Smart Plant Disease Detector</td>
+                    <td>Develop an Android app that detects plant diseases from leaf images using deep learning models and suggests treatments.</td>
+                </tr>
+                <tr>
+                    <td>AI-Based Sign Language Translator</td>
+                    <td>Build a system that captures sign language gestures using a camera and translates them to text/speech using computer vision.</td>
+                </tr>
+                <tr>
+                    <td>Real-Time Fire/Smoke Detection</td>
+                    <td>Create a real-time alerting system using CCTV feeds and YOLO-based object detection to detect fire or smoke events for safety automation.</td>
+                </tr>
+                <tr>
+                    <td>Fake News Detection System</td>
+                    <td>Develop a web or Android app that classifies news articles as fake or genuine using NLP and ML classification models.</td>
+                </tr>
+                <tr>
+                    <td>Virtual Health Consultant</td>
+                    <td>Design an AI chatbot-based mobile app that gathers symptoms and provides preliminary health advice using trained medical datasets.</td>
+                </tr>
+                <tr>
+                    <td>AI Resume Analyzer</td>
+                    <td>Build a web tool that analyzes resumes and ranks them based on job description matching using NLP and keyword extraction.</td>
+                </tr>
+                <tr>
+                    <td>AI-Based Code Review Tool</td>
+                    <td>Create a Python-based desktop or web tool that scans submitted code for best practices, formatting, and errors using ML and rule-based systems.</td>
+                </tr>
+                <tr>
+                    <td>Brainwave-Based Emotion Detection</td>
+                    <td>Use EEG sensor data and machine learning to classify emotions, which can be used in gaming or mental health monitoring applications.</td>
+                </tr>
+                <tr>
+                    <td>Energy Consumption Predictor</td>
+                    <td>Develop a system that predicts electricity usage patterns in homes or industries using past data and machine learning models.</td>
+                </tr>
+                <tr>
+                    <td>Driver Drowsiness Detection</td>
+                    <td>Design a camera-based alert system to detect signs of driver fatigue or drowsiness using facial landmarks and ML techniques.</td>
+                </tr>
+                <tr>
+                    <td>AI Investment Advisor</td>
+                    <td>Create a finance-focused chatbot that uses ML to offer stock recommendations and risk profiling based on user preferences.</td>
+                </tr>
+                <tr>
+                    <td>AI-Powered Smart Mirror</td>
+                    <td>Build a smart mirror that shows time, weather, calendar, and uses facial recognition for personalization and voice control.</td>
+                </tr>
+                <tr>
+                    <td>Skin Disease Detection App</td>
+                    <td>Develop an Android app that diagnoses skin conditions from images using convolutional neural networks and dermatology datasets.</td>
+                </tr>
+                <tr>
+                    <td>Voice-Based Email Assistant</td>
+                    <td>Create an assistant that allows users to compose, read, and send emails using only voice commands, powered by NLP and speech recognition.</td>
+                </tr>
+                <tr>
+                    <td>Crime Pattern Prediction</td>
+                    <td>Analyze and visualize crime data using ML models to predict high-risk zones and times, useful for law enforcement planning.</td>
+                </tr>
+            </table>
+        </section>
+
+
+
+        <section class="ideas-container">
+            <h3>AI and ML Project Ideas</h3>
+            <table>
+                <tr>
+                    <th>Project Idea</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Face Recognition System</td>
+                    <td>Develop a system that recognizes and verifies human faces from images or video feeds using deep learning techniques.</td>
+                </tr>
+                <tr>
+                    <td>Speech Emotion Recognition</td>
+                    <td>Create a model that can detect emotions from speech audio using machine learning and signal processing.</td>
+                </tr>
+
+                <tr>
+                    <td>Handwritten Digit Recognition</td>
+                    <td>Build a neural network to recognize handwritten digits using the MNIST dataset.</td>
+                </tr>
+                <tr>
+                    <td>Chatbot with Sentiment Analysis</td>
+                    <td>Design a chatbot that not only responds to user queries but also performs sentiment analysis on the user's input.</td>
+                </tr>
+                <tr>
+                    <td>Recommendation System</td>
+                    <td>Create a recommendation engine for movies, books, or products using collaborative filtering and content-based filtering techniques.</td>
+                </tr>
+                <tr>
+                    <td>Image Caption Generator</td>
+                    <td>Develop a model that generates descriptive captions for images using convolutional and recurrent neural networks.</td>
+                </tr>
+                <tr>
+                    <td>Stock Price Prediction</td>
+                    <td>Build a model to predict future stock prices using historical data and machine learning algorithms.</td>
+                </tr>
+                
+                <tr>
+                    <td>Spam Email Detection</td>
+                    <td>Create a system that classifies emails as spam or not spam using natural language processing and machine learning techniques.</td>
+                </tr>
+                <tr>
+                    <td>Object Detection in Images</td>
+                    <td>Develop a model that can detect and classify objects in images using deep learning algorithms such as YOLO or SSD.</td>
+                </tr>
+                <tr>
+                    <td>Predictive Text Generation</td>
+                    <td>Build a model that generates predictive text based on user input, similar to smartphone keyboards or text editors.</td>
+                </tr>
+                <tr>
+                    <td>Health Monitoring System</td>
+                    <td>Develop a system that uses machine learning to monitor and predict health conditions using data from wearable devices.</td>
+                </tr>
+                <tr>
+                    <td>Autonomous Driving Simulation</td>
+                    <td>Create a simulation of an autonomous vehicle that uses computer vision and reinforcement learning to navigate.</td>
+                </tr>
+                <tr>
+                    <td>Customer Churn Prediction</td>
+                    <td>Build a model to predict customer churn for a business using historical customer data and machine learning techniques.</td>
+                </tr>
+                <tr>
+                    <td>Sentiment Analysis on Social Media</td>
+                    <td>Analyze sentiments of social media posts and comments using natural language processing and machine learning.</td>
+                </tr>
+                <tr>
+                    <td>AI-Based Virtual Assistant</td>
+                    <td>Develop a virtual assistant that can understand and respond to voice commands using natural language processing.</td>
+                </tr>
+                <tr>
+                    <td>Fraud Detection in Transactions</td>
+                    <td>Create a system that detects fraudulent transactions in financial data using machine learning algorithms.</td>
+                </tr>
+                <tr>
+                    <td>Music Genre Classification</td>
+                    <td>Build a model that classifies music into different genres based on audio features and machine learning techniques.</td>
+                </tr>
+                <tr>
+                    <td>Medical Image Analysis</td>
+                    <td>Develop a system that analyzes medical images to assist in diagnosing diseases using deep learning techniques.</td>
+                </tr>
+                <tr>
+                    <td>Weather Prediction</td>
+                    <td>Create a model to predict weather conditions using historical weather data and machine learning algorithms.</td>
+                </tr>
+                <tr>
+                    <td>Speech Recognition System</td>
+                    <td>Develop a model that converts spoken language into text using deep learning techniques.</td>
+                </tr>
+                <tr>
+                    <td>Automated Essay Scoring</td>
+                    <td>Build a system that automatically scores essays based on content, grammar, and coherence using natural language processing.</td>
+                </tr>
+                <tr>
+                    <td>Chatbot with Speech Synthesis</td>
+                    <td>Design a chatbot that can respond to user queries with synthesized speech using natural language processing and text-to-speech conversion.</td>
+                </tr>
+                <tr>
+                    <td>Human Activity Recognition</td>
+                    <td>Develop a model that recognizes different human activities from sensor data using machine learning techniques.</td>
+                </tr>
+                
+                <tr>
+                    <td>Real-Time Language Translation</td>
+                    <td>Build a system that translates spoken language in real-time using deep learning and natural language processing.</td>
+                </tr>
+                <tr>
+                    <td>Game AI for Strategy Games</td>
+                    <td>Create an AI opponent for strategy games that uses machine learning to make decisions and adapt to the player's actions.</td>
+                </tr>
+                <tr>
+                    <td>AI-Based News Aggregator</td>
+                    <td>Develop a system that aggregates and classifies news articles based on topics and user preferences using machine learning.</td>
+                </tr>
+                <tr>
+                    <td>Voice Command Recognition</td>
+                    <td>Build a system that recognizes and executes voice commands using machine learning and natural language processing.</td>
+                </tr>
+                <tr>
+                    <td>AI-Enhanced Photo Editing</td>
+                    <td>Develop a photo editing tool that uses AI to automatically enhance images, apply filters, and remove blemishes.</td>
+                </tr>
+                <tr>
+                    <td>Emotion Recognition from Text</td>
+                    <td>Create a model that detects emotions in text messages using natural language processing and machine learning.</td>
+                </tr>
+                <tr>
+                    <td>AI-Based Personal Finance Assistant</td>
+                    <td>Develop a personal finance assistant that helps users manage their finances, track expenses, and provide budgeting advice using AI.</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section class="ideas-container">
+            <h3>Android + Machine Learning Projects</h3>
+            <table>
+                <tr>
+                    <th>Project Idea</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Personalized News Aggregator</td>
+                    <td>Develop an Android app that uses machine learning to analyze user preferences and reading habits, curating and recommending news articles tailored to individual interests.</td>
+                </tr>
+                <tr>
+                    <td>Emotion-Based Music Recommendation</td>
+                    <td>Create an Android app that uses facial recognition and machine learning to detect users' emotions and recommend music tracks that match their current mood.</td>
+                </tr>
+                <tr>
+                    <td>Real-Time Language Translation</td>
+                    <td>Build an Android app that uses machine learning to translate spoken language in real-time, providing text and voice translations for effective communication in different languages.</td>
+                </tr>
+                <tr>
+                    <td>Smart Photo Organizer</td>
+                    <td>Develop an Android app that uses machine learning to automatically organize and tag photos based on content, such as people, places, and events, making it easier for users to find specific images.</td>
+                </tr>
+                <tr>
+                    <td>Fitness Activity Recognition</td>
+                    <td>Create an Android app that uses machine learning to recognize and track different types of physical activities (e.g., walking, running, cycling) using smartphone sensors, providing detailed fitness analytics.</td>
+                </tr>
+                <tr>
+                    <td>Health Monitoring and Diagnosis</td>
+                    <td>Build an Android app that uses machine learning to analyze health data collected from wearable devices, providing users with insights and early warnings for potential health issues.</td>
+                </tr>
+                <tr>
+                    <td>Intelligent Shopping Assistant</td>
+                    <td>Develop an Android app that uses machine learning to recommend products based on user preferences and shopping history, offering personalized deals and promotions.</td>
+                </tr>
+                <tr>
+                    <td>Smart Home Voice Assistant</td>
+                    <td>Create an Android app that uses machine learning to understand and process voice commands, allowing users to control smart home devices and automate routines seamlessly.</td>
+                </tr>
+                <tr>
+                    <td>Automated Travel Planner</td>
+                    <td>Build an Android app that uses machine learning to recommend travel itineraries based on user preferences, budget, and past travel history, providing a personalized travel planning experience.</td>
+                </tr>
+                <tr>
+                    <td>Real-Time Fraud Detection</td>
+                    <td>Develop an Android app that uses machine learning to analyze financial transactions in real-time, identifying and alerting users to potential fraudulent activities.</td>
+                </tr>
+                <tr>
+                    <td>Interactive Learning App</td>
+                    <td>Create an Android app that uses machine learning to adapt educational content to the user's learning style and pace, providing a personalized learning experience with interactive quizzes and feedback.</td>
+                </tr>
+                <tr>
+                    <td>Smart Recipe Generator</td>
+                    <td>Build an Android app that uses machine learning to recommend recipes based on ingredients available at home, dietary preferences, and nutritional goals, offering personalized meal plans.</td>
+                </tr>
+                <tr>
+                    <td>Speech Therapy Assistant</td>
+                    <td>Develop an Android app that uses machine learning to assist with speech therapy, providing real-time feedback and personalized exercises based on the user's speech patterns.</td>
+                </tr>
+                <tr>
+                    <td>Augmented Reality Shopping Experience</td>
+                    <td>Create an Android app that uses machine learning and augmented reality to enhance the shopping experience, allowing users to visualize products in their environment before making a purchase.</td>
+                </tr>
+                <tr>
+                    <td>Smart Job Matching</td>
+                    <td>Build an Android app that uses machine learning to match job seekers with suitable job openings based on their skills, experience, and preferences, providing personalized career recommendations.</td>
+                </tr>
+                <tr>
+                    <td>Personalized News Aggregator</td>
+                    <td>Develop an Android app that uses machine learning to analyze user preferences and reading habits, curating and recommending news articles tailored to individual interests.</td>
+                </tr>
+                <tr>
+                    <td>Emotion-Based Music Recommendation</td>
+                    <td>Create an Android app that uses facial recognition and machine learning to detect users' emotions and recommend music tracks that match their current mood.</td>
+                </tr>
+                <tr>
+                    <td>Real-Time Language Translation</td>
+                    <td>Build an Android app that uses machine learning to translate spoken language in real-time, providing text and voice translations for effective communication in different languages.</td>
+                </tr>
+                <tr>
+                    <td>Smart Photo Organizer</td>
+                    <td>Develop an Android app that uses machine learning to automatically organize and tag photos based on content, such as people, places, and events, making it easier for users to find specific images.</td>
+                </tr>
+                <tr>
+                    <td>Fitness Activity Recognition</td>
+                    <td>Create an Android app that uses machine learning to recognize and track different types of physical activities (e.g., walking, running, cycling) using smartphone sensors, providing detailed fitness analytics.</td>
+                </tr>
+                <tr>
+                    <td>Health Monitoring and Diagnosis</td>
+                    <td>Build an Android app that uses machine learning to analyze health data collected from wearable devices, providing users with insights and early warnings for potential health issues.</td>
+                </tr>
+                <tr>
+                    <td>Intelligent Shopping Assistant</td>
+                    <td>Develop an Android app that uses machine learning to recommend products based on user preferences and shopping history, offering personalized deals and promotions.</td>
+                </tr>
+                <tr>
+                    <td>Smart Home Voice Assistant</td>
+                    <td>Create an Android app that uses machine learning to understand and process voice commands, allowing users to control smart home devices and automate routines seamlessly.</td>
+                </tr>
+                <tr>
+                    <td>Automated Travel Planner</td>
+                    <td>Build an Android app that uses machine learning to recommend travel itineraries based on user preferences, budget, and past travel history, providing a personalized travel planning experience.</td>
+                </tr>
+                <tr>
+                    <td>Real-Time Fraud Detection</td>
+                    <td>Develop an Android app that uses machine learning to analyze financial transactions in real-time, identifying and alerting users to potential fraudulent activities.</td>
+                </tr>
+                <tr>
+                    <td>Interactive Learning App</td>
+                    <td>Create an Android app that uses machine learning to adapt educational content to the user's learning style and pace, providing a personalized learning experience with interactive quizzes and feedback.</td>
+                </tr>
+                <tr>
+                    <td>Smart Recipe Generator</td>
+                    <td>Build an Android app that uses machine learning to recommend recipes based on ingredients available at home, dietary preferences, and nutritional goals, offering personalized meal plans.</td>
+                </tr>
+                <tr>
+                    <td>Speech Therapy Assistant</td>
+                    <td>Develop an Android app that uses machine learning to assist with speech therapy, providing real-time feedback and personalized exercises based on the user's speech patterns.</td>
+                </tr>
+                <tr>
+                    <td>Augmented Reality Shopping Experience</td>
+                    <td>Create an Android app that uses machine learning and augmented reality to enhance the shopping experience, allowing users to visualize products in their environment before making a purchase.</td>
+                </tr>
+                <tr>
+                    <td>Smart Job Matching</td>
+                    <td>Build an Android app that uses machine learning to match job seekers with suitable job openings based on their skills, experience, and preferences, providing personalized career recommendations.</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section class="ideas-container">
+            <h3>Aadhaar-Integrated Solutions</h3>
+            <table>
+                <tr>
+                    <th>Project Idea</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Digital Voting System with Aadhaar Authentication</td>
+                    <td>Create a secure digital voting system that uses Aadhaar authentication to verify voter identity and ensure the integrity of the voting process.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Based E-Governance Portal</td>
+                    <td>Develop an e-governance portal that uses Aadhaar authentication for secure access to government services, streamlining citizen interactions with various government departments.</td>
+                </tr>
+                <tr>
+                    <td>Secure Online Banking System with Aadhaar</td>
+                    <td>Build an online banking application that integrates Aadhaar authentication for secure login and transaction verification, enhancing the security of financial transactions.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Enabled Healthcare Management System</td>
+                    <td>Create a healthcare management system that uses Aadhaar authentication for patient identification and access to medical records, improving data security and patient care.</td>
+                </tr>
+                <tr>
+                    <td>Digital Identity Verification for E-Commerce</td>
+                    <td>Develop an e-commerce platform that uses Aadhaar authentication to verify user identities during account creation and transactions, reducing fraud and enhancing trust.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Based Education Enrollment System</td>
+                    <td>Build a system for online enrollment in educational institutions that uses Aadhaar authentication to verify student identities and streamline the admission process.</td>
+                </tr>
+                <tr>
+                    <td>Secure Mobile Wallet with Aadhaar Integration</td>
+                    <td>Create a mobile wallet application that uses Aadhaar authentication for secure transactions and user verification, providing a safer digital payment experience.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Enabled Public Distribution System</td>
+                    <td>Develop a public distribution system that uses Aadhaar authentication to ensure accurate distribution of subsidies and essential goods to eligible beneficiaries.</td>
+                </tr>
+                <tr>
+                    <td>Smart City Access Control System</td>
+                    <td>Create a smart city infrastructure project that uses Aadhaar authentication for access control to public facilities, enhancing security and user convenience.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Based Employee Attendance System</td>
+                    <td>Build an employee attendance system that uses Aadhaar authentication for accurate clocking in and out, reducing time fraud and streamlining HR processes.</td>
+                </tr>
+                <tr>
+                    <td>Digital Tax Filing System with Aadhaar</td>
+                    <td>Develop a digital tax filing system that uses Aadhaar authentication for secure access and submission of tax returns, simplifying compliance and reducing fraudulent claims.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Enabled Voting for Corporate Elections</td>
+                    <td>Create a corporate voting system that uses Aadhaar authentication to verify employee identities during internal elections, ensuring transparency and security in corporate governance.</td>
+                </tr>
+                <tr>
+                    <td>Secure Aadhaar-Based Travel Booking System</td>
+                    <td>Build a travel booking platform that uses Aadhaar authentication for user verification and secure transactions, enhancing safety and reducing fraud in travel bookings.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Integrated Access to Financial Services</td>
+                    <td>Develop a financial services platform that uses Aadhaar authentication to provide secure access to loans, investments, and other financial products, improving customer verification and service delivery.</td>
+                </tr>
+                <tr>
+                    <td>Smart Healthcare Insurance Claim System</td>
+                    <td>Develop a system that uses Aadhaar authentication for processing and verifying health insurance claims, ensuring that claims are legitimate and reducing fraudulent activities.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Based Home Loan Application System</td>
+                    <td>Create a home loan application system that uses Aadhaar authentication to verify applicant identities and streamline the loan approval process, enhancing security and efficiency.</td>
+                </tr>
+                <tr>
+                    <td>AI-Driven Aadhaar Fraud Detection System</td>
+                    <td>Build a machine learning system that analyzes transaction patterns and behaviors for anomalies, using Aadhaar authentication to detect and prevent fraudulent activities.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Enabled Subscription Service</td>
+                    <td>Develop a subscription service platform that uses Aadhaar authentication for secure user verification and access management, ensuring only authenticated users can access premium content or services.</td>
+                </tr>
+                <tr>
+                    <td>Secure Aadhaar-Based Online Voting for Local Government Elections</td>
+                    <td>Create an online voting system for local government elections that uses Aadhaar authentication to ensure secure and accurate voter verification, enhancing the integrity of the election process.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Based Disaster Relief Distribution System</td>
+                    <td>Build a system for distributing disaster relief aid that uses Aadhaar authentication to ensure that aid is distributed to verified beneficiaries, improving transparency and efficiency in relief operations.</td>
+                </tr>
+                <tr>
+                    <td>Personalized Aadhaar-Integrated Health Monitoring</td>
+                    <td>Develop an app that integrates Aadhaar authentication for personalized health monitoring, providing users with tailored health insights and recommendations based on their health data.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Based Identity Verification for Online Courses</td>
+                    <td>Create an online education platform that uses Aadhaar authentication to verify student identities during course registration and examinations, ensuring academic integrity and secure certification.</td>
+                </tr>
+                <tr>
+                    <td>Digital Aadhaar-Enabled Real Estate Transactions</td>
+                    <td>Build a platform for real estate transactions that uses Aadhaar authentication to verify buyer and seller identities, ensuring secure and transparent property deals.</td>
+                </tr>
+                <tr>
+                    <td>Automated Aadhaar-Based Pension Management System</td>
+                    <td>Create a pension management system that uses Aadhaar authentication to verify pensioners' identities and manage pension disbursements, improving efficiency and reducing fraud.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Based Smart Parking System</td>
+                    <td>Develop a smart parking solution that uses Aadhaar authentication to manage parking space reservations and payments, enhancing convenience and security in urban parking management.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Enabled Public Health Survey System</td>
+                    <td>Build a system for conducting public health surveys that uses Aadhaar authentication to ensure respondent authenticity and data accuracy, improving the reliability of health data collection.</td>
+                </tr>
+                <tr>
+                    <td>Secure Aadhaar-Based Event Ticketing System</td>
+                    <td>Create an event ticketing platform that uses Aadhaar authentication to verify ticket purchasers and attendees, reducing fraud and ensuring secure access to events.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Based Vehicle Registration and Management System</td>
+                    <td>Develop a vehicle registration and management system that uses Aadhaar authentication for verifying vehicle owners and managing registration processes, enhancing security and reducing paperwork.</td>
+                </tr>
+                <tr>
+                    <td>Smart Aadhaar-Based Property Rental System</td>
+                    <td>Build a property rental platform that uses Aadhaar authentication to verify tenants and landlords, ensuring secure and reliable rental agreements and transactions.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Based Voting System for Corporate Board Meetings</td>
+                    <td>Create a secure voting system for corporate board meetings that uses Aadhaar authentication to verify participant identities and ensure the integrity of board decisions.</td>
+                </tr>
+                <tr>
+                    <td>Aadhaar-Integrated Smart ATM System</td>
+                    <td>Develop an ATM system that uses Aadhaar authentication for secure transactions and account management, improving security and reducing ATM fraud.</td>
+                </tr>
+                <tr>
+                    <td>Secure Aadhaar-Based Job Application Portal</td>
+                    <td>Create a job application portal that uses Aadhaar authentication to verify applicant identities and streamline the recruitment process, enhancing security and reducing identity fraud.</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section class="ideas-container">
+            <h3>Advanced Project Ideas for PhD and M.Tech Students</h3>
+            <table>
+                <tr>
+                    <th>Project Idea</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Artificial Intelligence and Machine Learning</b></td>
+                </tr>
+                <tr>
+                    <td>Explainable AI for Healthcare Diagnosis</td>
+                    <td>Develop a machine learning model that provides transparent and interpretable healthcare diagnostics, focusing on model interpretability and trustworthiness. Research areas include explainable AI techniques, model interpretability, and clinical data analysis.</td>
+                </tr>
+                <tr>
+                    <td>Federated Learning for Privacy-Preserving AI</td>
+                    <td>Create a federated learning framework that enables multiple institutions to collaboratively train machine learning models without sharing sensitive data. Research areas include federated learning algorithms, data privacy, and distributed systems.</td>
+                </tr>
+                <tr>
+                    <td>AI-Driven Predictive Maintenance in Manufacturing</td>
+                    <td>Develop an AI system that predicts equipment failures and optimizes maintenance schedules in manufacturing environments. Research areas include predictive modeling, time series analysis, and industrial IoT data analytics.</td>
+                </tr>
+                <tr>
+                    <td>Reinforcement Learning for Autonomous Systems</td>
+                    <td>Implement a reinforcement learning algorithm to enhance the decision-making capabilities of autonomous vehicles or drones. Research areas include reinforcement learning, autonomous navigation, and real-time decision-making.</td>
+                </tr>
+                <tr>
+                    <td>AI for Climate Change Prediction and Mitigation</td>
+                    <td>Create AI models to predict climate change patterns and suggest mitigation strategies. Research areas include climate modeling, environmental data analysis, and sustainability-focused AI.</td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2"><b>Internet of Things (IoT)</b></td>
+                </tr>
+                <tr>
+                    <td>Smart Grid Optimization Using IoT and AI</td>
+                    <td>Develop a smart grid system that integrates IoT devices and AI algorithms for efficient energy distribution and management. Research areas include smart grid technology, IoT data integration, and energy optimization algorithms.</td>
+                </tr>
+                <tr>
+                    <td>IoT-Based Precision Agriculture</td>
+                    <td>Create an IoT framework for precision agriculture that monitors soil conditions, weather, and crop health to optimize farming practices. Research areas include sensor networks, agricultural data analytics, and IoT-based automation.</td>
+                </tr>
+                <tr>
+                    <td>IoT-Enabled Smart City Infrastructure</td>
+                    <td>Develop a comprehensive IoT-based system for managing smart city infrastructure, including traffic control, waste management, and public safety. Research areas include urban IoT networks, smart city data analytics, and infrastructure optimization.</td>
+                </tr>
+                <tr>
+                    <td>IoT Security and Privacy Framework</td>
+                    <td>Design a robust security and privacy framework for IoT devices and networks, addressing vulnerabilities and ensuring data protection. Research areas include IoT security protocols, data encryption, and privacy-preserving techniques.</td>
+                </tr>
+                <tr>
+                    <td>IoT-Based Healthcare Monitoring System</td>
+                    <td>Develop an IoT-enabled healthcare monitoring system that continuously tracks patient health metrics and alerts healthcare providers to potential issues. Research areas include wearable health devices, real-time health data analytics, and remote patient monitoring.</td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2"><b>Data Science and Big Data</b></td>
+                </tr>
+                <tr>
+                    <td>Big Data Analytics for Social Media Insights</td>
+                    <td>Analyze large-scale social media data to uncover trends, sentiments, and patterns using advanced big data analytics techniques. Research areas include sentiment analysis, social network analysis, and scalable data processing.</td>
+                </tr>
+                <tr>
+                    <td>Real-Time Big Data Processing Framework</td>
+                    <td>Develop a framework for real-time processing and analysis of big data streams from various sources. Research areas include stream processing algorithms, distributed computing, and real-time data analytics.</td>
+                </tr>
+                <tr>
+                    <td>Data-Driven Smart Healthcare Systems</td>
+                    <td>Create a data-driven system that uses big data analytics to improve healthcare delivery and patient outcomes. Research areas include healthcare data integration, predictive analytics, and personalized medicine.</td>
+                </tr>
+                <tr>
+                    <td>Big Data for Disaster Management and Response</td>
+                    <td>Develop a big data framework to analyze and respond to natural disasters, improving emergency response and resource allocation. Research areas include disaster data analytics, predictive modeling, and emergency management systems.</td>
+                </tr>
+                <tr>
+                    <td>Big Data-Driven Financial Fraud Detection</td>
+                    <td>Create a system that uses big data analytics to detect and prevent financial fraud in real-time. Research areas include anomaly detection, financial transaction analysis, and machine learning for fraud detection.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><b>Cybersecurity</b></td>
+                </tr>
+                <tr>
+                    <td>Advanced Threat Detection Using AI</td>
+                    <td>Develop an AI-based system to detect and respond to advanced cyber threats and attacks. Research areas include threat intelligence, machine learning for cybersecurity, and real-time threat detection.</td>
+                </tr>
+                <tr>
+                    <td>Blockchain-Based Secure Voting System</td>
+                    <td>Create a secure voting system that uses blockchain technology to ensure the integrity and transparency of elections. Research areas include blockchain security, cryptographic protocols, and secure voting mechanisms.</td>
+                </tr>
+                <tr>
+                    <td>Privacy-Preserving Data Sharing in IoT</td>
+                    <td>Design a framework for secure and privacy-preserving data sharing in IoT networks. Research areas include data encryption, secure communication protocols, and privacy-preserving techniques.</td>
+                </tr>
+                <tr>
+                    <td>Cybersecurity for Critical Infrastructure</td>
+                    <td>Develop advanced cybersecurity solutions to protect critical infrastructure such as power grids, water systems, and transportation networks. Research areas include critical infrastructure protection, risk assessment, and cyber-physical systems security.</td>
+                </tr>
+                <tr>
+                    <td>AI-Driven Malware Detection and Prevention</td>
+                    <td>Create an AI-based system to detect and prevent malware infections in real-time. Research areas include malware analysis, machine learning for cybersecurity, and real-time threat mitigation.</td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2"><b>Bioinformatics and Computational Biology</b></td>
+                </tr>
+                <tr>
+                    <td>AI for Personalized Medicine</td>
+                    <td>Develop AI models to predict patient-specific drug responses and optimize treatment plans. Research areas include genomic data analysis, machine learning in healthcare, and personalized treatment strategies.</td>
+                </tr>
+                <tr>
+                    <td>Computational Drug Discovery</td>
+                    <td>Create computational models to identify potential drug candidates and predict their efficacy. Research areas include molecular modeling, machine learning for drug discovery, and bioinformatics algorithms.</td>
+                </tr>
+                <tr>
+                    <td>Genome Sequence Analysis with Deep Learning</td>
+                    <td>Use deep learning techniques to analyze and interpret genome sequences for disease prediction and research. Research areas include genomics, deep learning applications in biology, and bioinformatics.</td>
+                </tr>
+                <tr>
+                    <td>Systems Biology and Network Modeling</td>
+                    <td>Develop computational models to study complex biological systems and networks. Research areas include systems biology, network analysis, and computational biology techniques.</td>
+                </tr>
+                <tr>
+                    <td>AI for Protein Structure Prediction</td>
+                    <td>Create AI models to predict protein structures and their functions. Research areas include structural bioinformatics, machine learning in biology, and protein modeling.</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- Connect Now Section -->
+        <section class="connect-section py-5" style="background-color: #007bff;">
+            <div class="container text-center text-white">
+                <h1>Hello! 👋</h1>
+                <p>We would love for you to be our clientele...</p>
+                <a href="/contact" class="btn btn-light btn-lg" style="border-radius: 50px; padding: 10px 30px;">Let's Connect</a>
+            </div>
+        </section>
+        
+        <section class="ideas-container">
+            <h3>IoT Projects</h3>
+            <table>
+                <tr>
+                    <th>Project Idea</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Personalized Health Assistant</td>
+                    <td>Develop an Android app that integrates with IoT wearable devices to monitor health metrics in real-time and uses machine learning to provide personalized health recommendations and alerts.</td>
+                </tr>
+                <tr>
+                    <td>Smart Home Automation with Voice Control</td>
+                    <td>Build an Android app that allows users to control their IoT-enabled smart home devices using voice commands, with machine learning to learn user preferences and automate tasks.</td>
+                </tr>
+                <tr>
+                    <td>Real-Time Environmental Monitoring</td>
+                    <td>Create an IoT system that collects environmental data (e.g., air quality, temperature, humidity) and an Android app that displays real-time data, with machine learning to predict pollution levels and provide health advisories.</td>
+                </tr>
+                <tr>
+                    <td>Intelligent Personal Finance Manager</td>
+                    <td>Develop an Android app that connects to IoT-enabled point-of-sale devices to track spending habits and uses machine learning to provide financial advice and budget recommendations.</td>
+                </tr>
+                <tr>
+                    <td>AI-Powered Personal Assistant</td>
+                    <td>Build an Android app that integrates with IoT devices to manage daily tasks, appointments, and reminders, using machine learning to understand user behavior and provide proactive assistance.</td>
+                </tr>
+                <tr>
+                    <td>Smart Agriculture Monitoring</td>
+                    <td>Create an IoT-based system with an Android app to monitor soil moisture, weather conditions, and crop health, using machine learning to optimize irrigation and predict crop yields.</td>
+                </tr>
+                <tr>
+                    <td>Autonomous Drone Control</td>
+                    <td>Develop an Android app that interfaces with IoT-enabled drones for tasks such as surveillance, delivery, and agricultural monitoring, using machine learning to enhance autonomous navigation and object detection.</td>
+                </tr>
+                <tr>
+                    <td>AI-Enhanced Smart City Solutions</td>
+                    <td>Build an Android app that interacts with IoT devices deployed in a smart city (e.g., traffic lights, waste bins) and uses machine learning to optimize city operations and provide real-time updates to residents.</td>
+                </tr>
+                <tr>
+                    <td>Intelligent Home Security System</td>
+                    <td>Create a smart home security system that uses IoT sensors and cameras to detect intrusions, with an Android app for remote monitoring and machine learning to differentiate between normal activity and potential threats.</td>
+                </tr>
+                <tr>
+                    <td>Smart Retail Experience</td>
+                    <td>Develop an Android app that uses IoT sensors in retail environments to enhance the shopping experience, providing personalized recommendations and navigation assistance, with machine learning to analyze shopping patterns.</td>
+                </tr>
+                <tr>
+                    <td>AI-Driven Disaster Management System</td>
+                    <td>Build an IoT-based disaster management system with an Android app that collects data from various sensors (e.g., seismic, weather) and uses machine learning to predict disasters and coordinate emergency responses.</td>
+                </tr>
+                <tr>
+                    <td>Smart Waste Management</td>
+                    <td>Create an IoT-enabled waste management system that uses sensors to monitor waste levels and an Android app for route optimization, with machine learning to predict waste generation patterns and improve efficiency.</td>
+                </tr>
+                <tr>
+                    <td>Interactive Smart Mirror</td>
+                    <td>Develop a smart mirror that uses IoT sensors and an Android app to display personalized information (e.g., weather, news, calendar) and uses machine learning to provide beauty and fashion recommendations based on user preferences.</td>
+                </tr>
+                <tr>
+                    <td>AI-Powered Traffic Management System</td>
+                    <td>Build an Android app that interacts with IoT traffic sensors and cameras to monitor traffic flow and uses machine learning to optimize signal timings and reduce congestion in real-time.</td>
+                </tr>
+                <tr>
+                    <td>Smart Pet Care System</td>
+                    <td>Create an IoT-based pet care system with an Android app that monitors pet activity and health metrics, using machine learning to provide personalized care recommendations and alerts for potential health issues.</td>
+                </tr>
+            </table>
+        </section>
+    
+        <section class="ideas-container">
+            <h3>Mega Project Ideas</h3>
+            <table>
+    
+                <tr>
+                    <th>Project Idea</th>
+                    <th>Description</th>
+                </tr>
+    
+                    <tr><td>Digital Voting System</td>
+                    <td>Develop a secure and efficient system for conducting elections electronically, ensuring voter authentication, anonymity, and accurate results.</td></tr>
+    
+                    <tr><td>Language Learning Platform</td>
+                    <td>Create an AI-powered platform that helps users learn new languages through interactive lessons, pronunciation practice, and personalized learning paths.</td></tr>
+    
+                    <tr><td>E-commerce Product Recommendation</td>
+                    <td>Build a recommendation engine for e-commerce platforms that suggests products to users based on their browsing history, purchase behavior, and preferences.</td></tr>
+    
+                    <tr><td>Automated Customer Support with AI Chatbot</td>
+                    <td>Design an AI chatbot that handles customer queries, troubleshoots issues, and assists users with technical support.</td></tr>
+    
+                    <tr><td>AI-Based Traffic Management</td>
+                    <td>Develop a system that uses AI to analyze traffic patterns and adjust traffic signals in real-time for optimized traffic flow.</td></tr>
+    
+                    <tr><td>Document Summarization Tool</td>
+                    <td>Create an application that uses natural language processing to automatically summarize lengthy documents or articles.</td></tr>
+    
+                    <tr><td>Medical Diagnosis Support System</td>
+                    <td>Build an AI system that assists medical professionals in diagnosing diseases by analyzing patient data and suggesting possible conditions.</td></tr>
+    
+                    <tr><td>Smart Home Energy Management</td>
+                    <td>Develop a solution that uses AI to monitor energy consumption in a smart home and optimize usage for efficiency and cost savings.</td></tr>
+    
+                    <tr><td>Food Allergen Detection App</td>
+                    <td>Create an app that uses image recognition to identify common allergens in food products to help individuals with allergies.</td></tr>
+    
+                    <tr><td>Emotion-Based Music Player</td>
+                    <td>Design a music player that selects and plays songs based on the user's mood, detected through facial expression analysis or user input.</td></tr>
+    
+                    <tr><td>Tourist Guide with Augmented Reality</td>
+                    <td>Develop an app that provides tourists with real-time information about landmarks, historical sites, and attractions using augmented reality.</td></tr>
+    
+                    <tr><td>Online Fraud Detection</td>
+                    <td>Create a system that uses AI to identify fraudulent transactions in online payments or financial transactions.</td></tr>
+    
+                    <tr><td>AI-Generated Art</td>
+                    <td>Build a system that uses generative adversarial networks (GANs) to create original art pieces, graphics, or designs.</td></tr>
+    
+                    <tr><td>Automated Plant Disease Detection</td>
+                    <td>Develop a tool that uses image processing and AI to identify plant diseases from images of leaves and provide recommendations for treatment.</td></tr>
+    
+                    <tr><td>Predictive Maintenance for Machinery</td>
+                    <td>Create a system that predicts maintenance needs for industrial equipment based on sensor data, reducing downtime and costs.</td></tr>
+    
+                <tr>
+                    <td>Handwriting Recognition App</td>
+                    <td>Convert handwritten text to digital text using machine learning.</td>
+                </tr>
+                <tr>
+                    <td>Basic Chatbot with FAQ Integration</td>
+                    <td>Answer frequently asked questions using natural language processing.</td>
+                </tr>
+                <tr>
+                    <td>Virtual Tutor for Basic Subjects</td>
+                    <td>Interactive learning system for subjects like math or language.</td>
+                </tr>
+                <tr>
+                    <td>Song Lyrics Generator</td>
+                    <td>Generate song lyrics based on input themes with NLP techniques.</td>
+                </tr>
+                <tr>
+                    <td>Simple Game AI</td>
+                    <td>AI opponent for games like Tic-Tac-Toe, Connect Four, or Rock-Paper-Scissors.</td>
+                </tr>
+                
+                    <tr><td>Color Palette Generator</td>
+                    <td>Create an AI tool that suggests harmonious color palettes for design projects, analyzing color relationships and aesthetics.</td></tr>
+    
+                    <tr><td>Food Recommendation System</td>
+                    <td>Build a system that suggests recipes or food choices based on user preferences and dietary restrictions.</td></tr>
+    
+                    <tr><td>Basic Image Filter App</td>
+                    <td>Develop an app that applies various filters to images using image processing techniques.</td></tr>
+    
+                    <tr><td>Personalized News Recommender</td>
+                    <td>Design a system that recommends news articles to users based on their reading history and interests.</td></tr>
+    
+                    <tr><td>Basic Emotion Detection in Text</td>
+                    <td>Create a program that can detect basic emotions like happiness, sadness, or anger from text input.</td></tr>
+    
+                    <tr><td>Language Flashcard App</td>
+                    <td>Build an app that helps users learn new words in a foreign language by providing flashcards with audio pronunciations and example sentences.</td></tr>
+    
+                    <tr><td>Currency Converter with Voice Input</td>
+                    <td>Develop a currency converter app that accepts voice input for currency values and converts between different currencies.</td></tr>
+    
+                    <tr><td>Voice-Controlled Task Manager</td>
+                    <td>Design a simple task manager application that responds to voice commands for adding, editing, or completing tasks.</td></tr>
+    
+                    <tr><td>Basic Music Genre Classification</td>
+                    <td>Build a model that classifies songs into basic genres like pop, rock, or jazz based on their audio features.</td></tr>
+    
+                    <tr><td>Weather Forecasting App</td>
+                    <td>Create an app that provides weather forecasts for a user's location using data from APIs and presenting it in a user-friendly interface.</td></tr>
+    
+                    <tr><td>Task Management App</td>
+                    <td>Develop a to-do list app that helps users organize their tasks, set deadlines, and prioritize activities.</td></tr>
+    
+                    <tr><td>Expense Tracker</td>
+                    <td>Create an app that allows users to track their expenses, categorize spending, and analyze their financial habits.</td></tr>
+    
+                    <tr><td>Weather App</td>
+                    <td>Build a weather forecasting app that provides current weather conditions and forecasts based on the user's location.</td></tr>
+    
+                    <tr><td>Fitness Tracking App</td>
+                    <td>Design an app that tracks users' daily physical activity, calories burned, and allows them to set fitness goals.</td></tr>
+    
+                    <tr><td>Recipe Book App</td>
+                    <td>Develop an app that provides a collection of recipes with detailed instructions, allowing users to search for dishes and save their favorites.</td></tr>
+    
+                    <tr><td>Language Learning Flashcards</td>
+                    <td>Create an app that helps users learn new languages through interactive flashcards with translations and audio.</td></tr>
+    
+                    <tr><td>Note-Taking App</td>
+                    <td>Build a note-taking app that allows users to create, organize, and categorize notes, including text, images, and voice recordings.</td></tr>
+    
+                    <tr><td>Barcode Scanner App</td>
+                    <td>Design an app that uses the device's camera to scan barcodes and provide information about products, such as prices and reviews.</td></tr>
+    
+                    <tr><td>Location-Based Reminder App</td>
+                    <td>Develop an app that sends reminders to users when they reach specific locations, helping them remember tasks associated with those places.</td></tr>
+    
+                    <tr><td>Quote of the Day App</td>
+                    <td>Create an app that displays inspirational or thought-provoking quotes to users each day.</td></tr>
+    
+                    <tr><td>Language Translation App</td>
+                    <td>Build a simple translation app that translates text between different languages.</td></tr>
+    
+                    <tr><td>Unit Converter App</td>
+                    <td>Design an app that converts units like length, weight, temperature, and more.</td></tr>
+    
+                    <tr><td>Digital Diary App</td>
+                    <td>Create an app where users can write and save their thoughts, memories, and experiences.</td></tr>
+    
+                    <tr><td>Currency Converter App</td>
+                    <td>Build an app that converts currency values between different countries.</td></tr>
+    
+                    <tr><td>E-commerce Platform</td>
+                    <td>Create a full-fledged e-commerce website where users can browse products, add them to a shopping cart, and complete purchases.</td></tr>
+    
+                    <tr><td>Online Learning Management System</td>
+                    <td>Build a platform for hosting online courses, allowing instructors to upload content, conduct quizzes, and track student progress.</td></tr>
+    
+                    <tr><td>Social Networking Platform</td>
+                    <td>Develop a social networking site where users can create profiles, connect with friends, share posts, and engage in discussions.</td></tr>
+    
+                    <tr><td>Job Portal</td>
+                    <td>Design a website where employers can post job listings, and job seekers can create profiles, upload resumes, and apply for positions.</td></tr>
+    
+                    <tr><td>Real Estate Listing Website</td>
+                    <td>Build a platform for listing and searching for real estate properties, complete with search filters and property details.</td></tr>
+    
+                    <tr><td>Health and Fitness Tracker</td>
+                    <td>Create a web app that allows users to log their daily workouts, meals, and health data, providing insights and progress tracking.</td></tr>
+    
+                    <tr><td>Project Management Tool</td>
+                    <td>Develop a web application for managing projects, tasks, deadlines, and team collaboration.</td></tr>
+    
+                    <tr><td>Online Blogging Platform</td>
+                    <td>Design a platform where users can create and publish their own blogs, along with features for commenting and sharing.</td></tr>
+    
+                    <tr><td>Event Management System</td>
+                    <td>Build a system for organizing and managing events, including event registration, scheduling, and notifications.</td></tr>
+    
+                    <tr><td>Recipe Sharing Website</td>
+                    <td>Create a website where users can share and discover recipes, along with features for rating and commenting.</td></tr>
+    
+                    <tr><td>Online Marketplace for Local Services</td>
+                    <td>Develop a platform where users can find and hire local services like plumbers, electricians, tutors, etc.</td></tr>
+    
+                    <tr><td>Travel Planning Website</td>
+                    <td>Design a website that helps users plan their travel itineraries, book accommodations, and explore destinations.</td></tr>
+    
+                    <tr><td>Charity Donation Portal</td>
+                    <td>Build a platform for users to make donations to various charitable organizations and track their contributions.</td></tr>
+    
+                    <tr><td>Language Exchange Platform</td>
+                    <td>Create a website where users can find language exchange partners to practice speaking different languages.</td></tr>
+    
+                    <tr><td>Freelance Job Marketplace</td>
+                    <td>Develop a platform where freelancers can offer their services, and clients can hire them for various projects.</td></tr>
+    
+                    <tr><td>Hospital Management System</td>
+                    <td>Design a database system that manages patient records, appointments, medical histories, and billing for a hospital or clinic.</td></tr>
+    
+                    <tr><td>Online Banking System</td>
+                    <td>Create a comprehensive database system for an online banking platform, including user accounts, transactions, balance management, and security features.</td></tr>
+    
+                    <tr><td>Inventory Management System</td>
+                    <td>Develop a database solution for tracking inventory levels, orders, restocking, and sales for businesses.</td></tr>
+    
+                    <tr><td>E-commerce Database</td>
+                    <td>Build a complex database for an e-commerce website that manages product listings, customer orders, payments, and shipping information.</td></tr>
+    
+                    <tr><td>Library Management System</td>
+                    <td>Design a database system to manage books, borrowers, check-ins/outs, reservations, and late fees for a library.</td></tr>
+    
+                    <tr><td>Flight Reservation System</td>
+                    <td>Create a database that handles flight scheduling, reservations, passenger information, and ticketing for an airline.</td></tr>
+    
+                    <tr><td>Online Learning Platform</td>
+                    <td>Develop a database for an online learning platform that stores course content, student enrollment, progress tracking, and assessments.</td></tr>
+    
+                    <tr><td>Social Media Data Management</td>
+                    <td>Design a database system to handle user profiles, posts, comments, likes, and connections in a social media platform.</td></tr>
+    
+                    <tr><td>Retail Point of Sale System</td>
+                    <td>Build a database for a retail business to manage sales, inventory, customer loyalty programs, and reporting.</td></tr>
+    
+                    <tr><td>Hotel Booking System</td>
+                    <td>Create a database for a hotel's reservation system, handling room availability, guest information, bookings, and billing.</td></tr>
+    
+                    <tr><td>Student Information System</td>
+                    <td>Design a comprehensive database for managing student records, grades, attendance, courses, and scheduling.</td></tr>
+    
+                    <tr><td>Customer Relationship Management (CRM) System</td>
+                    <td>Develop a database for a CRM platform that stores customer interactions, sales leads, communications, and follow-ups.</td></tr>
+    
+                    <tr><td>Online Movie Database</td>
+                    <td>Build a database for an online movie database website, storing movie information, user ratings, reviews, and recommendations.</td></tr>
+    
+                    <tr><td>Food Delivery App Database</td>
+                    <td>Design a database for a food delivery application, handling restaurant menus, orders, deliveries, and payment processing.</td></tr>
+    
+                    <tr><td>Human Resources Management System (HRMS)</td>
+                    <td>Create a database system to manage employee information, payroll, attendance, performance evaluations, and benefits.</td></tr>
+    
+            </table>
+        </section>
+        
+        <section class="ideas-container">
+            <h3>Simplified Project that are easy to implement</h3>
+            <table>
+    
+                <tr>
+                    <th>Project Idea</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>IoT-Based Smart Home System</td>
+                    <td>Develop a smart home system using IoT devices to control lights, appliances, and security systems remotely via a mobile app.</td>
+                </tr>
+                <tr>
+                    <td>Student Attendance Management System</td>
+                    <td>Create an automated student attendance management system using RFID or face recognition technology to track and record attendance.</td>
+                </tr>
+                <tr>
+                    <td>Online Examination System</td>
+                    <td>Develop a secure online examination platform with features like timer, multiple question types, and automated grading.</td>
+                </tr>
+                <tr>
+                    <td>Weather Forecasting Application</td>
+                    <td>Build a weather forecasting app using historical data and machine learning algorithms to predict weather conditions for specific locations.</td>
+                </tr>
+                <tr>
+                    <td>College Event Management System</td>
+                    <td>Create a web-based platform to manage and organize college events, including registration, scheduling, and announcements.</td>
+                </tr>
+                <tr>
+                    <td>E-Commerce Website</td>
+                    <td>Develop a fully functional e-commerce website with features like product listings, shopping cart, payment gateway integration, and user authentication.</td>
+                </tr>
+                <tr>
+                    <td>Library Management System</td>
+                    <td>Build a library management system to handle book inventory, borrowing/returning of books, and user management.</td>
+                </tr>
+                <tr>
+                    <td>Online Food Ordering System</td>
+                    <td>Create an online food ordering system with features like menu browsing, order placing, payment processing, and delivery tracking.</td>
+                </tr>
+                <tr>
+                    <td>Hospital Management System</td>
+                    <td>Develop a hospital management system to manage patient records, doctor appointments, billing, and inventory management.</td>
+                </tr>
+                <tr>
+                    <td>Android-Based Fitness Tracker</td>
+                    <td>Build an Android app that tracks user fitness activities such as steps, calories burned, and workout routines, with personalized recommendations.</td>
+                </tr>
+                <tr>
+                    <td>Vehicle Parking Management System</td>
+                    <td>Develop a vehicle parking management system that automates parking space allocation, fee calculation, and monitoring.</td>
+                </tr>
+                <tr>
+                    <td>Virtual Classroom</td>
+                    <td>Create a virtual classroom platform with features like live video lectures, interactive whiteboards, and online assignments.</td>
+                </tr>
+                <tr>
+                    <td>Personal Budget Management System</td>
+                    <td>Build a personal budget management app that helps users track income, expenses, and savings, with visualizations and financial advice.</td>
+                </tr>
+                <tr>
+                    <td>Chat Application</td>
+                    <td>Develop a real-time chat application with user authentication, one-on-one messaging, group chats, and multimedia sharing features.</td>
+                </tr>
+                <tr>
+                    <td>Blood Donation Management System</td>
+                    <td>Create a system to manage blood donation camps, donor registration, and blood bank inventory, with notifications for donors.</td>
+                </tr>
+                <tr>
+                    <td>Movie Recommendation System</td>
+                    <td>Develop a movie recommendation system using collaborative filtering and machine learning to suggest movies based on user preferences.</td>
+                </tr>
+                <tr>
+                    <td>Online Voting System</td>
+                    <td>Build a secure online voting system that allows users to cast votes electronically, with features for voter authentication and result tallying.</td>
+                </tr>
+                <tr>
+                    <td>Online Job Portal</td>
+                    <td>Create an online job portal where job seekers can browse job listings, apply for jobs, and upload resumes, while employers can post job openings.</td>
+                </tr>
+                <tr>
+                    <td>Bus Tracking System</td>
+                    <td>Develop a bus tracking system that provides real-time bus location and estimated arrival times using GPS and mobile technology.</td>
+                </tr>
+                <tr>
+                    <td>Online Shopping Recommendation System</td>
+                    <td>Build a recommendation system for an online shopping site that suggests products based on user behavior and purchase history.</td>
+                </tr>
+            </table>
+        </section>
+    
+        <section class="ideas-container">
+            <h4>AI-Powered Healthcare Diagnosis System</h4>
+            <p>Create an AI-based system that uses medical imaging data to accurately diagnose diseases like cancer. Highlight your proficiency in machine learning, medical image analysis, and healthcare applications.
+    
+            <h4>Smart City IoT Management Platform</h4>
+            <p>Develop a comprehensive IoT platform that collects and analyzes data from various sensors in a smart city context, optimizing energy consumption, traffic flow, and resource allocation.
+    
+            <h4>E-commerce Personalization Engine</h4>
+            <p>Build an e-commerce recommendation engine that uses machine learning to provide personalized product recommendations based on user behavior, leading to improved user engagement and sales.
+    
+            <h4>Blockchain-Based Supply Chain Management</h4>
+            <p>Implement a blockchain solution for enhancing transparency and traceability in supply chains. Showcase your understanding of blockchain technology, smart contracts, and decentralized applications.
+    
+            <h4>Natural Language Processing (NLP) Chatbot with Multilingual Support</h4>
+            <p>Create a chatbot capable of handling user queries in multiple languages, utilizing advanced NLP techniques for accurate responses. Highlight your skills in NLP, language processing, and user experience design.
+        </section>
+    
+        <section class="ideas-container">
+            <h3>Projects for a strong resume🔥</h3>
+            <ol>
+                <li><h5>Voice-Based Transport Enquiry System</h5></li>
+                <li><h5>An SMS-based Remote Server Monitoring System</h5></li>
+                <li><h5>Top Songs Analysis</h5></li>
+                <li><h5>Everything on Cloud</h5></li>
+                <li><h5>AI-Powered System</h5></li>
+            </ol>
+            <i>
+            <tr>
+                <td><b>5G-Enabled Smart Factory Automation :</b></td>
+                <td>Develop an automated smart factory system leveraging 5G technology for ultra-reliable low-latency communication (URLLC). The project should include the integration of IoT devices, real-time data analytics, and AI for predictive maintenance and process optimization. Research areas include 5G communication, industrial IoT, and smart manufacturing.</td>
+            </tr>
+            <tr>
+                <td><b>AI-Powered Cybersecurity Threat Hunting :</b></td>
+                <td>Create an AI-driven system for proactive threat hunting in cybersecurity. The project should utilize machine learning algorithms to detect anomalies, predict potential threats, and automate response actions. Research areas include machine learning for cybersecurity, anomaly detection, and automated threat response.</td>
+            </tr>
+            <tr>
+                <td><b>Edge Computing for Real-Time Video Analytics :</b></td>
+                <td>Implement an edge computing platform for real-time video analytics applications such as traffic monitoring, crowd analysis, or industrial inspection. The project should focus on deploying machine learning models on edge devices to reduce latency and bandwidth usage. Research areas include edge computing, computer vision, and real-time data processing.</td>
+            </tr>
+            <tr>
+                <td><b>Augmented Reality for Remote Collaboration :</b></td>
+                <td>Develop an augmented reality (AR) system to enhance remote collaboration and communication. The project should include features such as real-time object recognition, interactive 3D annotations, and seamless integration with existing communication tools. Research areas include augmented reality, computer vision, and human-computer interaction.</td>
+            </tr>
+            <tr>
+                <td><b>Smart Grid with Renewable Energy Integration :</b></td>
+                <td>Create a smart grid system that integrates renewable energy sources (such as solar and wind) and optimizes energy distribution using AI algorithms. The project should address challenges like energy storage, load balancing, and real-time grid monitoring. Research areas include smart grid technology, renewable energy integration, and energy optimization algorithms.</td>
+            </tr>
+            </i>
+
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-section">
+                    <div class="footer-brand">capstonne</div>
+                    <b><p>We hope you find these ideas helpful. Keep in mind, they are just starting points and can be further customized to fit your specific interests and goals.</p></b>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <!-- Add content as needed for the third column -->
+                </div>
+                <div class="col-md-4 footer-section">
+                    <div class="footer-brand">FUTURE</div>
+                    <p>Innovative software solutions for you</p>
+                    <a type="submit" class="btn btn-primary" href="/contact">Get started with us</a>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <p>&copy; capstonne 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Go to Top Button -->
+    <button id="goTopBtn" title="Go to top">
+        <i class="bi bi-arrow-up-circle"></i> Back to Top
+    </button>
+
+    <!-- Script to handle the button behavior -->
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById("goTopBtn").style.display = "block";
+            } else {
+                document.getElementById("goTopBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        document.getElementById('goTopBtn').addEventListener('click', function(){
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+          function aosInit() {
+            AOS.init({
+              duration: 600,
+              easing: 'ease-in-out',
+              once: true,
+              mirror: false
+            });
+          }
+          aosInit();
+    </script>
+
+    <script>
+        // Add 'active' class to the current page link
+        $(document).ready(function() {
+            var path = window.location.pathname.split("/").pop();
+            if (path == '') {
+                path = 'index.html';
+            }
+            var target = $('nav a[href="'+path+'"]');
+            target.addClass('active');
+        });
+
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4787733824741439" crossorigin="anonymous"></script>
+</body>
+</html>
