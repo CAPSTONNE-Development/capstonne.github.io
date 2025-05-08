@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneWwmw5TjMPhMsNc4j+m69jz2GvKienViehFjrwKkRjZuZJEdKkoBZaGi"
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            /* Light background for the whole page */
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #495057;
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 0.375rem;
+            border-color: #ced4da;
+            box-shadow: none;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            /* Smooth transition */
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #007bff;
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        }
+
+        .card {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9ecef;
+            margin-bottom: 2rem;
+            /* Increased margin between cards */
+            background-color: #fff;
+            /* White background for cards */
+        }
+
+        .card-header {
+            background-color: #e9ecef;
+            /* Slightly lighter header */
+            border-bottom: 1px solid #e9ecef;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            color: #343a40;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            /* Increased padding inside card body */
+        }
+
+        .btn-primary {
+            border-radius: 0.375rem;
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: 500;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            /* Smooth transition */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-primary:focus {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.5);
+        }
+
+        .btn-secondary {
+            border-radius: 0.375rem;
+            background-color: #e9ecef;
+            border-color: #e9ecef;
+            color: #343a40;
+            font-weight: 500;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d0d3d9;
+            border-color: #d0d3d9;
+        }
+
+        .btn-secondary:focus {
+            background-color: #d0d3d9;
+            border-color: #d0d3d9;
+            box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.5);
+        }
+
+        .form-text {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
+
+        .text-danger {
+            font-size: 0.875rem;
+        }
+
+        /* Custom styles for specific sections */
+        #xthBoard {
+            width: 100%;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 992px) {
+            .col-lg-4 {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .col-md-6 {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card {
+                margin-bottom: 1.5rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                /* Full width buttons on small screens */
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <!-- As a link -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">capstonne</a>
+        </div>
+    </nav>
+    <div class="container py-5">
+        <div class="text-center mb-4">
+            <h2>स्वा. सावरकर प्रतिष्टान संचालित</h2>
+            <h3>प्रज्ञा प्रबोधिनी प्रशाला व कनिष्ठ महाविद्यालय</h3>
+            <h4>११ वी विज्ञान प्रवेश अर्ज - शैक्षणिक वर्ष २०२५-२६</h4>
+        </div>
+        <form class="needs-validation" novalidate>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <label for="formNo" class="form-label">Form No. <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="formNo" required readonly>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4 mb-3">
+                            <label for="firstName" class="form-label">First Name <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Enter First Name"
+                                required>
+                            <div class="invalid-feedback">Please enter your first name.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="fathersName" class="form-label">Father's Name <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="fathersName" placeholder="Enter Father's Name"
+                                required>
+                            <div class="invalid-feedback">Please enter your father's name.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="surname" class="form-label">Surname <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="surname" placeholder="Enter Surname" required>
+                            <div class="invalid-feedback">Please enter your surname.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="mothersName" class="form-label">Mother's Name (As Per Xth Marksheet) <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="mothersName" placeholder="Enter Mother's Name"
+                                required>
+                            <div class="invalid-feedback">Please enter your mother's name.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="aadharNo" class="form-label">Student Aadhar No. <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="aadharNo" placeholder="Enter Aadhar No"
+                                required>
+                            <div class="invalid-feedback">Please enter your Aadhar number.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="xthSchoolName" class="form-label">Xth School Name <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="xthSchoolName"
+                                placeholder="Enter Xth School Name" required>
+                            <div class="invalid-feedback">Please enter your Xth school name.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="xthSchoolUdiseNo" class="form-label">Xth School UDISE No. <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="xthSchoolUdiseNo"
+                                placeholder="Enter Xth School UDISE No." required>
+                            <div class="invalid-feedback">Please enter your Xth school UDISE number.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="studentId" class="form-label">Student ID</label>
+                            <input type="text" class="form-control" id="studentId"
+                                placeholder="Enter Student ID (if applicable)">
+                            <small class="form-text text-muted">If applicable.</small>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="dob" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="dob" required>
+                            <div class="invalid-feedback">Please enter your date of birth.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="birthPlace" class="form-label">Place of Birth <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="birthPlace" placeholder="Enter Birth Place"
+                                required>
+                            <div class="invalid-feedback">Please enter your place of birth.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="birthTaluka" class="form-label">Birth Taluka <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="birthTaluka" placeholder="Enter Birth Taluka"
+                                required>
+                            <div class="invalid-feedback">Please enter your birth taluka.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="birthDistrict" class="form-label">Birth District <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="birthDistrict"
+                                placeholder="Enter Birth District" required>
+                            <div class="invalid-feedback">Please enter your birth district.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="state" placeholder="Enter State" required>
+                            <div class="invalid-feedback">Please enter your state.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="nationality" class="form-label">Nationality <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nationality" placeholder="Enter Nationality"
+                                required>
+                            <div class="invalid-feedback">Please enter your nationality.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="motherTongue" class="form-label">Mother Tongue <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="motherTongue" placeholder="Enter Mother Tongue"
+                                required>
+                            <div class="invalid-feedback">Please enter your mother tongue.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="religion" class="form-label">Religion <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="religion" placeholder="Enter Religion" required>
+                            <div class="invalid-feedback">Please enter your religion.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="cast" class="form-label">Cast (As per school leaving certificate) <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="cast" placeholder="Enter Cast" required>
+                            <div class="invalid-feedback">Please enter your cast.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="subcast" class="form-label">Subcast (As per school leaving certificate) <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="subcast" placeholder="Enter Subcast" required>
+                            <div class="invalid-feedback">Please enter your subcast.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="mobileNo" class="form-label">Student Mobile No. (Whatsapp if available) <span
+                                    class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="mobileNo" placeholder="Enter Mobile No" required>
+                            <div class="invalid-feedback">Please enter your mobile number.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="height" class="form-label">Height (in cm)</label>
+                            <input type="number" class="form-control" id="height" placeholder="Enter Height">
+                            <small class="form-text text-muted">In centimeters.</small>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="weight" class="form-label">Weight (in kg)</label>
+                            <input type="number" class="form-control" id="weight" placeholder="Enter Weight">
+                            <small class="form-text text-muted">In kilograms.</small>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="bloodGroup" class="form-label">Blood Group</label>
+                            <input type="text" class="form-control" id="bloodGroup" placeholder="Enter Blood Group">
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="physicalDisability" class="form-label">Physical Disability (if any)</label>
+                            <input type="text" class="form-control" id="physicalDisability"
+                                placeholder="Enter Disability">
+                            <small class="form-text text-muted">If any.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">अकरावी विषय (कोणताही एक गट निवडा) / XIth Subjects (Choose any one group)</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <label class="form-label">Group G1</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g1English" value="G1"
+                                    required>
+                                <label class="form-check-label" for="g1English">English</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g1Marathi" value="G1">
+                                <label class="form-check-label" for="g1Marathi">Marathi</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g1Physics" value="G1">
+                                <label class="form-check-label" for="g1Physics">Physics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g1Chemistry" value="G1">
+                                <label class="form-check-label" for="g1Chemistry">Chemistry</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g1Mathematics" value="G1">
+                                <label class="form-check-label" for="g1Mathematics">Mathematics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g1EnvironmentalScience"
+                                    value="G1">
+                                <label class="form-check-label" for="g1EnvironmentalScience">Environmental
+                                    Science</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g1PhysicalEducation"
+                                    value="G1">
+                                <label class="form-check-label" for="g1PhysicalEducation">Physical Education</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <label class="form-label">Group G2</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g2English" value="G2">
+                                <label class="form-check-label" for="g2English">English</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g2Physics" value="G2">
+                                <label class="form-check-label" for="g2Physics">Physics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g2Chemistry" value="G2">
+                                <label class="form-check-label" for="g2Chemistry">Chemistry</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g2Mathematics" value="G2">
+                                <label class="form-check-label" for="g2Mathematics">Mathematics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g2Biology" value="G2">
+                                <label class="form-check-label" for="g2Biology">Biology</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g2EnvironmentalScience"
+                                    value="G2">
+                                <label class="form-check-label" for="g2EnvironmentalScience">Environmental
+                                    Science</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g2PhysicalEducation"
+                                    value="G2">
+                                <label class="form-check-label" for="g2PhysicalEducation">Physical Education</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <label class="form-label">Group G3</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g3English" value="G3">
+                                <label class="form-check-label" for="g3English">English</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g3Physics" value="G3">
+                                <label class="form-check-label" for="g3Physics">Physics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g3Chemistry" value="G3">
+                                <label class="form-check-label" for="g3Chemistry">Chemistry</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g3Biology" value="G3">
+                                <label class="form-check-label" for="g3Biology">Biology</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g3IT" value="G3">
+                                <label class="form-check-label" for="g3IT">IT</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g3EnvironmentalScience"
+                                    value="G3">
+                                <label class="form-check-label" for="g3EnvironmentalScience">Environmental
+                                    Science</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g3PhysicalEducation"
+                                    value="G3">
+                                <label class="form-check-label" for="g3PhysicalEducation">Physical Education</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <label class="form-label">Group G4</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g4English" value="G4">
+                                <label class="form-check-label" for="g4English">English</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g4Physics" value="G4">
+                                <label class="form-check-label" for="g4Physics">Physics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g4Chemistry" value="G4">
+                                <label class="form-check-label" for="g4Chemistry">Chemistry</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g4IT" value="G4">
+                                <label class="form-check-label" for="g4IT">IT</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g4GeographyEnglish"
+                                    value="G4">
+                                <label class="form-check-label" for="g4GeographyEnglish">Geography (English)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g4EnvironmentalScience"
+                                    value="G4">
+                                <label class="form-check-label" for="g4EnvironmentalScience">Environmental
+                                    Science</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g4PhysicalEducation"
+                                    value="G4">
+                                <label class="form-check-label" for="g4PhysicalEducation">Physical Education</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <label class="form-label">Group G5</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g5English" value="G5">
+                                <label class="form-check-label" for="g5English">English</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g5Marathi" value="G5">
+                                <label class="form-check-label" for="g5Marathi">Marathi</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g5Physics" value="G5">
+                                <label class="form-check-label" for="g5Physics">Physics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g5Chemistry" value="G5">
+                                <label class="form-check-label" for="g5Chemistry">Chemistry</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g5Biology" value="G5">
+                                <label class="form-check-label" for="g5Biology">Biology</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g5GeographyMarathi"
+                                    value="G5">
+                                <label class="form-check-label" for="g5GeographyMarathi">Geography (Marathi)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g5EnvironmentalScience"
+                                    value="G5">
+                                <label class="form-check-label" for="g5EnvironmentalScience">Environmental
+                                    Science</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g5PhysicalEducation"
+                                    value="G5">
+                                <label class="form-check-label" for="g5PhysicalEducation">Physical Education</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <label class="form-label">Group G6</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g6English" value="G6">
+                                <label class="form-check-label" for="g6English">English</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g6Marathi" value="G6">
+                                <label class="form-check-label" for="g6Marathi">Marathi</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g6Physics" value="G6">
+                                <label class="form-check-label" for="g6Physics">Physics</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g6Chemistry" value="G6">
+                                <label class="form-check-label" for="g6Chemistry">Chemistry</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g6IT" value="G6">
+                                <label class="form-check-label" for="g6IT">IT</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g6GeographyEnglish"
+                                    value="G6">
+                                <label class="form-check-label" for="g6GeographyEnglish">Geography (English)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g6EnvironmentalScience"
+                                    value="G6">
+                                <label class="form-check-label" for="g6EnvironmentalScience">Environmental
+                                    Science</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="group" id="g6PhysicalEducation"
+                                    value="G6">
+                                <label class="form-check-label" for="g6PhysicalEducation">Physical Education</label>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="form-text text-muted">Select the subjects for XIth standard.</small>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">दहावीचे तपशील / Xth Details</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label for="xthBoard" class="form-label">Xth Passing Board <span
+                                    class="text-danger">*</span></label>
+                            <select class="form-select" id="xthBoard" required>
+                                <option value="" disabled selected>Select Board</option>
+                                <option value="SSC">SSC</option>
+                                <option value="CBSE">CBSE</option>
+                                <option value="ICSE">ICSE</option>
+                                <option value="OTHER">OTHER</option>
+                            </select>
+                            <div class="invalid-feedback">Please select your Xth passing board.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="xthSeatNumber" class="form-label">Xth Seat Number <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="xthSeatNumber"
+                                placeholder="Enter Xth Seat Number" required>
+                            <div class="invalid-feedback">Please enter your Xth seat number.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="xthPassingMonthYear" class="form-label">Xth Passing Month and Year <span
+                                    class="text-danger">*</span></label>
+                            <input type="month" class="form-control" id="xthPassingMonthYear" required>
+                            <div class="invalid-feedback">Please enter your Xth passing month and year.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="xthObtainedMarks" class="form-label">Xth Obtained Marks <span
+                                    class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="xthObtainedMarks"
+                                placeholder="Enter Obtained Marks" required>
+                            <div class="invalid-feedback">Please enter your Xth obtained marks.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="xthTotalMarks" class="form-label">Xth Total Marks <span
+                                    class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="xthTotalMarks" placeholder="Enter Total Marks"
+                                required>
+                            <div class="invalid-feedback">Please enter your Xth total marks.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="xthPercentage" class="form-label">Xth Percentage <span
+                                    class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="xthPercentage" placeholder="Enter Percentage"
+                                required>
+                            <div class="invalid-feedback">Please enter your Xth percentage.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">पालकांचे तपशील / Parent's Details</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4 mb-3">
+                            <label for="fatherFirstName" class="form-label">Father's First Name (As per Aadhar) <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="fatherFirstName"
+                                placeholder="Enter Father's First Name" required>
+                            <div class="invalid-feedback">Please enter your father's first name.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="fatherMiddleName" class="form-label">Father's Middle Name (As per
+                                Aadhar)</label>
+                            <input type="text" class="form-control" id="fatherMiddleName"
+                                placeholder="Enter Father's Middle Name">
+                            <small class="form-text text-muted">If applicable.</small>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="fatherSurname" class="form-label">Father's Surname (As per Aadhar) <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="fatherSurname"
+                                placeholder="Enter Father's Surname" required>
+                            <div class="invalid-feedback">Please enter your father's surname.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="parentAddress" class="form-label">Parent's Address <span
+                                    class="text-danger">*</span></label>
+                            <textarea class="form-control" id="parentAddress" rows="3"
+                                placeholder="Enter Parent's Address" required></textarea>
+                            <div class="invalid-feedback">Please enter your parent's address.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="parentMobileNo" class="form-label">Parent's Mobile Number (Whatsapp) <span
+                                    class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="parentMobileNo"
+                                placeholder="Enter Parent's Mobile Number" required>
+                            <div class="invalid-feedback">Please enter your parent's mobile number.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="fatherEducation" class="form-label">Father's Education <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="fatherEducation"
+                                placeholder="Enter Father's Education" required>
+                            <div class="invalid-feedback">Please enter your father's education.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="fatherAadharNo" class="form-label">Father's Aadhar No. <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="fatherAadharNo"
+                                placeholder="Enter Father's Aadhar No." required>
+                            <div class="invalid-feedback">Please enter your father's Aadhar number.</div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="occupation" class="form-label">Father's Occupation <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="occupation"
+                                placeholder="Enter Father's Occupation" required>
+                            <div class="invalid-feedback">Please enter your father's occupation.</div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label for="nationality" class="form-label">Nationality <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nationality" placeholder="Enter Nationality"
+                                required>
+                            <div class="invalid-feedback">Please enter your nationality.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">दस्तऐवज अपलोड / Upload Documents</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label for="studentPhoto" class="form-label">Student Photo (Passport Size) - (Less than 300KB)</label>
+                            <input type="file" name="studentPhoto" id="studentPhoto" class="form-control" required>
+                        </div>
+
+                        <div class="col-lg-6 mb-3">
+                            <label for="leavingCert" class="form-label">Leaving Certificate - (Less than 500KB)</label>
+                            <input type="file" name="leavingCertificate" id="leavingCert" class="form-control" required>
+                        </div>
+
+                        <div class="col-lg-6 mb-3">
+                            <label for="tenthMarksheet" class="form-label">10th Marksheet - (Less than 500KB)</label>
+                            <input type="file" name="tenthMarksheet" id="tenthMarksheet" class="form-control" required>
+                        </div>
+
+                        <div class="col-lg-6 mb-3">
+                            <label for="casteCert" class="form-label">Caste Certificate - (Less than 500KB)</label>
+                            <input type="file" name="casteCertificate" id="casteCert" class="form-control">
+                        </div>
+
+                        <div class="col-lg-6 mb-3">
+                            <label for="incomeCert" class="form-label">Income Certificate - (Less than 500KB)</label>
+                            <input type="file" name="incomeCertificate" id="incomeCert" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">पेमेंट तपशील / Payment Details</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4 mb-3">
+                            <label for="paymentMode" class="form-label">Fee Payment Mode</label>
+                            <select id="paymentMode" class="form-select" required onchange="toggleTransactionId()">
+                                <option value="">Select</option>
+                                <option value="UPI">UPI</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label id="txnLabel" class="form-label">Transaction ID</label>
+                            <input type="text" id="txnId" placeholder="Enter Transaction ID" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label id="bankLabel" class="form-label">Bank Name</label>
+                            <input type="text" id="bankName" placeholder="Enter Bank Name" class="form-control"
+                                required>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label class="form-label">Payment Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="fileupload" class="form-label">Bank Receipt Upload (QR कोड Receipt) – (Less
+                                than
+                                500KB)</label>
+                            <input type="file" class="form-control" id="fileupload" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit and Reset Buttons -->
+            <div>
+                <button class="btn btn-primary me-2" type="submit">Submit</button>
+                <button class="btn btn-secondary" type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (optional but recommended for form validation styling) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Client-side validation script -->
+    <script>
+        (function () {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+    <script>
+        const formNumberField = document.getElementById("formNo");
+        formNumberField.value = "PPPM-11SCI-" + Date.now();
+    </script>
+</body>
+
+</html>
